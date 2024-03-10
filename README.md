@@ -11,6 +11,29 @@ The goal is to classify pixel-wise annotations to understand the driving environ
 ## Dataset
 The dataset used is the BDD100K, which provides 10K images with rich annotations for various tasks including semantic segmentation. Annotations have been adjusted so that the pixel value `255` corresponds to the `unknown` class and is represented by `19` in our adjusted masks.
 
+Below is the mapping from class IDs to their respective classes:
+
+- `0`: Road
+- `1`: Sidewalk
+- `2`: Building
+- `3`: Wall
+- `4`: Fence
+- `5`: Pole
+- `6`: Traffic Light
+- `7`: Traffic Sign
+- `8`: Vegetation
+- `9`: Terrain
+- `10`: Sky
+- `11`: Person
+- `12`: Rider
+- `13`: Car
+- `14`: Truck
+- `15`: Bus
+- `16`: Train
+- `17`: Motorcycle
+- `18`: Bicycle
+- `19`: Unknown
+  
 ## Model
 We use a U-Net architecture with a ResNet34 backbone for the task of semantic segmentation. The model is trained to predict 20 classes based on the BDD100K dataset specification.
 
