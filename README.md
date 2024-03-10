@@ -2,7 +2,9 @@
 # Semantic Segmentation on BDD100K Dataset
 
 ## Overview
-This project applies semantic segmentation techniques to the BDD100K dataset. The goal is to classify pixel-wise annotations to understand the driving environment better.
+This project applies semantic segmentation techniques to the [BDD100K dataset](https://doc.bdd100k.com/index.html). 
+
+The goal is to classify pixel-wise annotations to understand the driving environment better.
 
 ![Semantic Segmentation Samples](bdd100k_seg.png)
 
