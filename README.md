@@ -41,8 +41,8 @@ We use a U-Net architecture with a ResNet34 backbone for the task of semantic se
 Instructions for setting up the project environment:
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone [sem-seg-bdd100k](https://github.com/ronigold/sem-seg-bdd100k.git)
+cd sem-seg-bdd100k
 pip install -r requirements.txt
 ```
 
