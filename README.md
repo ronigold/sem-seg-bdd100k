@@ -41,8 +41,6 @@ To download the datasets for the project please click on the following links:
 
 To successfully run the notebook, make sure you set your project's root path to:
 
-.../bdd100k
-
     └── images
     
         └── train
