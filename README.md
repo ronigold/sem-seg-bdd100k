@@ -33,6 +33,40 @@ Below is the mapping from class IDs to their respective classes:
 - `18`: Bicycle
 - `19`: Unknown
   
+To download the datasets for the project please click on the following links:
+- [Train dataset](https://dl.cv.ethz.ch/bdd100k/data/10k_images_train.zip).
+- [Valid dataset](https://dl.cv.ethz.ch/bdd100k/data/10k_images_val.zip).
+- [Test dataset](https://dl.cv.ethz.ch/bdd100k/data/10k_images_test.zip).
+- [Labels (for Train & Valid))](https://dl.cv.ethz.ch/bdd100k/data/bdd100k_sem_seg_labels_trainval.zip).
+
+To successfully run the notebook, make sure you set your project's root path to:
+.../bdd100k
+    └── images
+        └── train
+            └── 0004a4c0-d4dff0ad.jpg
+            └── 00054602-3bf57337.jpg
+            └── 00067cfb-e535423e.jpg
+            └── ...
+        └── valid
+            └── 7d06fefd-f7be05a6.jpg
+            └── 7d128593-0ccfea4c.jpg
+            └── 7d15b18b-1e0d6e3f.jpg
+            └── ...
+    └── labels
+        └── train
+            └── 0004a4c0-d4dff0ad.png
+            └── 00054602-3bf57337.png
+            └── 00067cfb-e535423e.png
+            └── ...
+        └── valid
+            └── 7d06fefd-f7be05a6.png
+            └── 7d128593-0ccfea4c.png
+            └── 7d15b18b-1e0d6e3f.png
+            └── ...
+    └── test
+        └── ac517380-00000000.jpg
+        └── ac56c836-bdabca21.jpg
+        └── ...
 ## Model
 The project employs a U-Net architecture with a ResNet34 backbone, designed for precise pixel-wise classification across the dataset's 20 classes.
 
