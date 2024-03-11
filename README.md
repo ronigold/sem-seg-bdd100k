@@ -4,12 +4,11 @@
 ## Overview
 This project applies semantic segmentation techniques to the [BDD100K dataset](https://doc.bdd100k.com/index.html). 
 
-The goal is to classify pixel-wise annotations to understand the driving environment better.
+We utilize the BDD100K dataset, known for its diverse driving conditions, including 10K images with rich annotations for tasks like semantic segmentation. The annotations are adjusted so that the pixel value 255, originally representing unknown objects, is mapped to 19 to fit our model's classification schema.
 
 ![Semantic Segmentation Samples](bdd100k_seg.png)
 
 ## Dataset
-The dataset used is the BDD100K, which provides 10K images with rich annotations for various tasks including semantic segmentation. Annotations have been adjusted so that the pixel value `255` corresponds to the `unknown` class and is represented by `19` in our adjusted masks.
 
 Below is the mapping from class IDs to their respective classes:
 
@@ -35,43 +34,38 @@ Below is the mapping from class IDs to their respective classes:
 - `19`: Unknown
   
 ## Model
-We use a U-Net architecture with a ResNet34 backbone for the task of semantic segmentation. The model is trained to predict 20 classes based on the BDD100K dataset specification.
+The project employs a U-Net architecture with a ResNet34 backbone, designed for precise pixel-wise classification across the dataset's 20 classes.
+
+## Notebook
+The project is encapsulated in a Jupyter Notebook, providing an end-to-end walkthrough from data preprocessing, model training, to evaluation and visualization of the results.
+
+### How to Use
+1. Clone the repository to your local machine or a compatible Jupyter environment.
+2. Ensure you have Jupyter Notebook or JupyterLab installed.
+3. Navigate to the cloned repository and launch the notebook:
+   
+```bash
+jupyter notebook semantic_segmentation_bdd100k.ipynb
+```
+4. Follow the steps in the notebook to train the model and evaluate its performance.
 
 ## Installation
-Instructions for setting up the project environment:
+To install the required libraries, run:
 
 ```bash
-git clone https://github.com/ronigold/sem-seg-bdd100k.git
-cd sem-seg-bdd100k
 pip install -r requirements.txt
 ```
-
-## Usage
-To train the model, execute the following command:
-
-```bash
-python train.py --data_path /path/to/dataset
-```
-
-To evaluate the model and generate segmentation masks:
-
-```bash
-python evaluate.py --data_path /path/to/dataset --model_path /path/to/model
-```
-
-## Custom Scripts
-- `get_adjusted_mask_file_path`: A custom function included in the data preprocessing step that adjusts mask annotations for training.
+This will install all necessary dependencies to run the notebook, including PyTorch, FastAI, and PIL.
 
 ## Results
-After training, the results are evaluated on a hold-out test set. Metrics such as accuracy, IoU, and F1-score are reported.
+The notebook includes detailed sections on model evaluation, showcasing accuracy, Intersection over Union (IoU), and F1-score among other metrics. Visualizations are provided to compare the model's predictions against the ground truth.
 
 ## Contributing
-Contributions to the project are welcome. Please fork the repository and submit a pull request.
+Contributions are welcome. If you have suggestions for improving the project, please open an issue or submit a pull request.
 
 ## License
-By using the BDD100K dataset, you agree to comply with the BDD100K license terms.
+Using the BDD100K dataset requires compliance with its license terms. Ensure to adhere to these when utilizing the dataset.
 
 ## Contact
-For questions and support, please open an issue in the repository.
-
+For questions or support, feel free to open an issue in the repository. Your feedback and inquiries are highly appreciated.
 
