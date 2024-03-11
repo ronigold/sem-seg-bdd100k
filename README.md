@@ -127,7 +127,7 @@ The analysis of the results shows that although the general results are not bad,
 ![Confusion Matrix CE](src/test_set_samples_focal.png)
 
 #### Conclusion
-In summary, addressing data imbalance through adjustments in the loss function allowed the model to predict a broader range of classes. However, this approach led to a decrease in overall performance and introduced some noise. This issue likely stems from insufficient data for the underrepresented classes, making it difficult for the model to discern clear patterns. Consequently, this not only impacts the model's ability to learn from these classes but also affects its performance across all other classes.
+In summary, addressing data imbalance through adjustments in the loss function allowed the model to predict a broader range of classes (all the classes except train class). However, this approach led to a decrease in overall performance and introduced some noise. This issue likely stems from insufficient data for the underrepresented classes, making it difficult for the model to discern clear patterns. Consequently, this not only impacts the model's ability to learn from these classes but also affects its performance across all other classes.
 
 ## Contributing
 Contributions are welcome. If you have suggestions for improving the project, please open an issue or submit a pull request.
