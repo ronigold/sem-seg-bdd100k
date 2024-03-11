@@ -95,6 +95,13 @@ The analysis of the results shows that although the general results are not bad,
 
 
 #### Classification
+We can also use the model we built as a classification model.
+
+The rule will be that if the image has at least one pixel that belongs to a certain class, that class appears in the image.
+
+In this way it is possible to examine the performance of the model as a multi-label classification model:
+
+
 ![Confusion Matrix CE](src/confusion_matrix_cross_entropy.png)
 ![Classification Results CE](src/cla_res_cross_entropy.png)
 
