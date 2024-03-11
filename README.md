@@ -63,6 +63,18 @@ jupyter notebook semantic_segmentation_bdd100k.ipynb
 ```
 4. Follow the steps in the notebook to train the model and evaluate its performance.
 
+Note: the database also contains the trained model. If you want to use them and not train a new model you must add the following line to the notebook:
+
+for the model with Cross-Entropy loss:
+```bash
+learn = load_learner('models/learn.pkl')
+```
+
+for the model with Focal loss:
+```bash
+learn = load_learner('models/learn_FocalLoss.pkl')
+```
+
 ## Installation
 To install the required libraries, run:
 
@@ -74,23 +86,53 @@ This will install all necessary dependencies to run the notebook, including PyTo
 ## Results
 The notebook includes detailed sections on model evaluation, showcasing accuracy, Intersection over Union (IoU), and F1-score among other metrics. Visualizations are provided to compare the model's predictions against the ground truth.
 
+The visual results shown below are based on the first model with the higher overall performance (cross_entropy)
+
 ### Sample from the Validation set (actual VS predicted)
 ![Cross Entropy Loss](src/valid_samples.png)
 
 ### Sample from the Test set
 ![Cross Entropy Loss](src/test_samples.png)
 
-### Results with cross-entropy loss
-
-![Cross Entropy Loss](src/cross_entropy_loss.png)
+### Cross Entropy Loss
 
 The analysis of the results shows that although the general results are not bad, there are degenerate classes. These classes are represented by missing representation in the data as can be seen:
 
+#### Cross Entropy loss
+![Cross Entropy Loss](src/cross_entropy_loss.png)
+
 #### Segmentation 
+![Segmentation Results CE](src/cross-entropy-seg-res.png)
+![IOU VS PER. CE](src/ios-vs-perc-cross-entropy.png)
+
 
 #### Classification
+![Confusion Matrix CE](src/confusion_matrix_cross_entropy.png)
+![Classification Results CE](src/cla_res_cross_entropy.png)
 
-![Confusion Matrix](src/confusion_matrix.png)
+### Focal Loss + Class Weights
+
+The "Focal Loss + Class Weights" experiment is designed to address the challenges of training a deep learning model on an unbalanced dataset, where some classes are significantly underrepresented compared to others. Focal loss is an advanced loss function that modifies the standard cross-entropy loss to put more focus on hard, misclassified examples and less on easy examples. This is achieved by adding a modulating factor to the cross-entropy loss, which reduces the loss contribution from easy examples and increases the importance of correcting misclassified ones.
+
+Incorporating class weights into the focal loss further enhances the model's ability to deal with class imbalance. Class weights are used to assign more significance to rare classes and less to common ones during the training process. By combining focal loss with class weights, the model is encouraged not only to focus on hard examples but also to pay more attention to underrepresented classes, thereby improving overall model performance on imbalanced datasets.
+
+#### Focal Loss + Class Weights loss
+![Cross Entropy Loss](src/focal_loss.png)
+The analysis of the results shows that although the general results are not bad, there are degenerate classes. These classes are represented by missing representation in the data as can be seen:
+
+#### Segmentation 
+![Segmentation Results CE](src/focal-seg-res.png)
+![IOU VS PER. CE](src/ios-vs-perc-focal.png)
+
+#### Classification
+![Confusion Matrix CE](src/confusion_matrix_focal.png)
+![Classification Results CE](src/cla_res_focal.png)
+
+#### Visualization (on Test Set)
+![Confusion Matrix CE](src/test_set_samples_focal.png)
+
+#### Conclusion
+In summary, addressing data imbalance through adjustments in the loss function allowed the model to predict a broader range of classes. However, this approach led to a decrease in overall performance and introduced some noise. This issue likely stems from insufficient data for the underrepresented classes, making it difficult for the model to discern clear patterns. Consequently, this not only impacts the model's ability to learn from these classes but also affects its performance across all other classes.
 
 ## Contributing
 Contributions are welcome. If you have suggestions for improving the project, please open an issue or submit a pull request.
