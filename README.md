@@ -70,7 +70,7 @@ This will install all necessary dependencies to run the notebook, including PyTo
 ## Results
 The notebook includes detailed sections on model evaluation, showcasing accuracy, Intersection over Union (IoU), and F1-score among other metrics. Visualizations are provided to compare the model's predictions against the ground truth.
 
-### Sample from the Validation set
+### Sample from the Validation set (actual vs predicted)
 ![Cross Entropy Loss](src/valid_samples.png)
 
 ### Sample from the Test set
