@@ -72,7 +72,9 @@ The notebook includes detailed sections on model evaluation, showcasing accuracy
 
 ### Results with cross-entropy loss
 
-You can see that although the general results are not bad, there are degenerate classics. These classes are represented by a missing representation in the data as you can see:
+![Cross Entropy Loss](src/cross_entropy_loss.png)
+
+The analysis of the results shows that although the general results are not bad, there are degenerate classes. These classes are represented by missing representation in the data as can be seen:
 
 #### Segmentation 
 
