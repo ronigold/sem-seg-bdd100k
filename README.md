@@ -46,6 +46,10 @@ To successfully run the notebook, make sure you set your project's root path to:
 ## Model
 The project employs a U-Net architecture with a ResNet34 backbone, designed for precise pixel-wise classification across the dataset's 20 classes.
 
+![U-Net with a ResNet34 backbone](src/unet.png)
+
+The weights are pre-trained weights on ImageNet to optimize learning and exploit the potential of transfer learning
+
 ## Notebook
 The project is encapsulated in a Jupyter Notebook, providing an end-to-end walkthrough from data preprocessing, model training, to evaluation and visualization of the results.
 
