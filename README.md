@@ -40,6 +40,7 @@ To download the datasets for the project please click on the following links:
 - [Labels (for Train & Valid))](https://dl.cv.ethz.ch/bdd100k/data/bdd100k_sem_seg_labels_trainval.zip).
 
 To successfully run the notebook, make sure you set your project's root path to:
+
 .../bdd100k
 
     └── images
