@@ -78,7 +78,7 @@ You can see that although the general results are not bad, there are degenerate 
 
 #### Classification
 
-![Confusion Matrix](src/cm.png)
+![Confusion Matrix](src/confusion_matrix.png)
 
 ## Contributing
 Contributions are welcome. If you have suggestions for improving the project, please open an issue or submit a pull request.
