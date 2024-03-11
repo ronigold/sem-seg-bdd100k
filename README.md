@@ -63,18 +63,6 @@ jupyter notebook semantic_segmentation_bdd100k.ipynb
 ```
 4. Follow the steps in the notebook to train the model and evaluate its performance.
 
-Note: the database also contains the trained model. If you want to use them and not train a new model you must add the following line to the notebook:
-
-for the model with Cross-Entropy loss:
-```bash
-learn = load_learner('models/learn.pkl')
-```
-
-for the model with Focal loss:
-```bash
-learn = load_learner('models/learn_FocalLoss.pkl')
-```
-
 ## Installation
 To install the required libraries, run:
 
