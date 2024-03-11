@@ -6,7 +6,7 @@ This project applies semantic segmentation techniques to the [BDD100K dataset](h
 
 We utilize the BDD100K dataset, known for its diverse driving conditions, including 10K images with rich annotations for tasks like semantic segmentation. The annotations are adjusted so that the pixel value 255, originally representing unknown objects, is mapped to 19 to fit our model's classification schema.
 
-![Semantic Segmentation Samples](bdd100k_seg.png)
+![Semantic Segmentation Samples](src/train_samples.png)
 
 ## Dataset
 
@@ -41,58 +41,8 @@ To download the datasets for the project please click on the following links:
 
 To successfully run the notebook, make sure you set your project's root path to:
 
-    └── images
-    
-        └── train
-        
-            └── 0004a4c0-d4dff0ad.jpg
-            
-            └── 00054602-3bf57337.jpg
-            
-            └── 00067cfb-e535423e.jpg
-            
-            └── ...
-            
-        └── valid
-        
-            └── 7d06fefd-f7be05a6.jpg
-            
-            └── 7d128593-0ccfea4c.jpg
-            
-            └── 7d15b18b-1e0d6e3f.jpg
-            
-            └── ...
-            
-    └── labels
-    
-        └── train
-        
-            └── 0004a4c0-d4dff0ad.png
-            
-            └── 00054602-3bf57337.png
-            
-            └── 00067cfb-e535423e.png
-            
-            └── ...
-            
-        └── valid
-        
-            └── 7d06fefd-f7be05a6.png
-            
-            └── 7d128593-0ccfea4c.png
-            
-            └── 7d15b18b-1e0d6e3f.png
-            
-            └── ...
-            
-    └── test
-    
-        └── ac517380-00000000.jpg
-        
-        └── ac56c836-bdabca21.jpg
-        
-        └── ...
-        
+![Tree Files](src/files_tree.png)
+
 ## Model
 The project employs a U-Net architecture with a ResNet34 backbone, designed for precise pixel-wise classification across the dataset's 20 classes.
 
@@ -119,6 +69,16 @@ This will install all necessary dependencies to run the notebook, including PyTo
 
 ## Results
 The notebook includes detailed sections on model evaluation, showcasing accuracy, Intersection over Union (IoU), and F1-score among other metrics. Visualizations are provided to compare the model's predictions against the ground truth.
+
+### Results with cross-entropy loss
+
+You can see that although the general results are not bad, there are degenerate classics. These classes are represented by a missing representation in the data as you can see:
+
+#### Segmentation 
+
+#### Classification
+
+![Confusion Matrix](src/cm.png)
 
 ## Contributing
 Contributions are welcome. If you have suggestions for improving the project, please open an issue or submit a pull request.
