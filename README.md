@@ -129,6 +129,14 @@ The analysis of the results shows that although the general results are not bad,
 #### Conclusion
 In summary, addressing data imbalance through adjustments in the loss function allowed the model to predict a broader range of classes (all the classes except train class). However, this approach led to a decrease in overall performance and introduced some noise. This issue likely stems from insufficient data for the underrepresented classes, making it difficult for the model to discern clear patterns. Consequently, this not only impacts the model's ability to learn from these classes but also affects its performance across all other classes.
 
+## Semantic Search CLIP
+
+In this segment, we use CLIP (Contrastive Language–Image Pre-training) inversely from its common application. Rather than generating text from images, we aim to match textual prompts with a set of pre-processed image thumbnails. For each text prompt, CLIP's cross-modal capabilities are utilized to find the most relevant image from the dataset. 
+
+The process involves preparing embeddings for all images in DBB100K to and then calculating the similarity between the embeddings of text prompts and images. Below, the results illustrate the closest image match for each prompt based on this methodology.
+
+![CLIP Image Search Results](src/CLIP_res.png)
+
 ## Contributing
 Contributions are welcome. If you have suggestions for improving the project, please open an issue or submit a pull request.
 
