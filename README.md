@@ -59,7 +59,7 @@ The project is encapsulated in a Jupyter Notebook, providing an end-to-end walkt
 3. Navigate to the cloned repository and launch the notebook:
    
 ```bash
-jupyter notebook semantic_segmentation_bdd100k.ipynb
+jupyter notebook Training and evaluation.ipynb
 ```
 4. Follow the steps in the notebook to train the model and evaluate its performance.
 
@@ -136,6 +136,15 @@ In this segment, we use CLIP (Contrastive Language–Image Pre-training) inverse
 The process involves preparing embeddings for all images in DBB100K to and then calculating the similarity between the embeddings of text prompts and images. Below, the results illustrate the closest image match for each prompt based on this methodology.
 
 ![CLIP Image Search Results](src/CLIP_res.png)
+
+### How to Use
+1. Clone the repository to your local machine or a compatible Jupyter environment.
+2. Ensure you have Jupyter Notebook or JupyterLab installed.
+3. Navigate to the cloned repository and launch the notebook:
+   
+```bash
+jupyter notebook Semantic Search CLIP.ipynb
+```
 
 ## Contributing
 Contributions are welcome. If you have suggestions for improving the project, please open an issue or submit a pull request.
