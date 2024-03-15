@@ -129,7 +129,7 @@ The analysis of the results shows that although the general results are not bad,
 #### Conclusion
 In summary, addressing data imbalance through adjustments in the loss function allowed the model to predict a broader range of classes (all the classes except train class). However, this approach led to a decrease in overall performance and introduced some noise. This issue likely stems from insufficient data for the underrepresented classes, making it difficult for the model to discern clear patterns. Consequently, this not only impacts the model's ability to learn from these classes but also affects its performance across all other classes.
 
-## Semantic Search CLIP
+## Semantic Search
 
 In this section, we will outline a methodology for creating a pipeline capable of processing a query related to the content depicted within a database of images, and subsequently generating a pertinent response accompanied by the appropriate image. This response will be formulated in natural language and will be based on the semantic interpretation of the visual content identified in the image. This pipeline will exclusively utilize open-source models.
 
