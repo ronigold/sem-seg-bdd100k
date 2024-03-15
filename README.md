@@ -131,11 +131,29 @@ In summary, addressing data imbalance through adjustments in the loss function a
 
 ## Semantic Search CLIP
 
-In this segment, we use CLIP (Contrastive Language–Image Pre-training) inversely from its common application. Rather than generating text from images, we aim to match textual prompts with a set of pre-processed image thumbnails. For each text prompt, CLIP's cross-modal capabilities are utilized to find the most relevant image from the dataset. 
+In this section, we will outline a methodology for creating a pipeline capable of processing a query related to the content depicted within a database of images, and subsequently generating a pertinent response accompanied by the appropriate image. This response will be formulated in natural language and will be based on the semantic interpretation of the visual content identified in the image. This pipeline will exclusively utilize open-source models.
+
+The construction of this pipeline necessitates the integration of two primary tools:
+
+1. **CLIP (Contrastive Language–Image Pretraining)**: This model facilitates the embedding of images and text within a unified representational space, enabling the identification of images most closely aligned with the query posed by the user.
+
+2. **LLaVA (Language and Vision Assistant)**: As a multimodal model, LLaVA is adept at processing images and generating descriptive narratives of the visuals contained therein.
+
+Subsequent section will demonstrate how, by employing CLIP to create a vectorized database of our image collection, we can accurately retrieve images by specifying key visual elements through natural language queries. In this segment, we use CLIP (Contrastive Language–Image Pre-training) inversely from its common application. Rather than generating text from images, we aim to match textual prompts with a set of pre-processed image thumbnails. For each text prompt, CLIP's cross-modal capabilities are utilized to find the most relevant image from the dataset. 
 
 The process involves preparing embeddings for all images in DBB100K to and then calculating the similarity between the embeddings of text prompts and images. Below, the results illustrate the closest image match for each prompt based on this methodology.
 
 ![CLIP Image Search Results](src/CLIP_res.png)
+
+The subsequent segment delineates the operational framework and outcomes facilitated by the pipeline. The process is delineated as follows:
+
+1. Initially, the pipeline transforms the entirety of the image database into vector representations utilizing the CLIP model.
+2. Upon receiving a specific query, a technique akin to few-shot learning is employed to instruct the LLaVA model on extracting pertinent anchors from the query. These anchors serve as the basis for identifying the relevant image in the subsequent step.
+3. The extracted anchors are then vectorized, enabling the identification of the image vector that most closely aligns with these anchor vectors.
+4. Following the identification of the image that corresponds to the anchors present in the initial query, the pipeline revisits LLaVA, requesting it to formulate a response to the user's original question, referencing the identified image.
+5. The process culminates in the presentation of both the located image and LLaVA's generated response within the user interface, offering a comprehensive answer to the user's query.
+
+![CLIP Image Search Results](src/side_by_side_chats)
 
 ### How to Use
 1. Clone the repository to your local machine or a compatible Jupyter environment.
