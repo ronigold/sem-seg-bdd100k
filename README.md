@@ -153,7 +153,7 @@ The subsequent segment delineates the operational framework and outcomes facilit
 4. Following the identification of the image that corresponds to the anchors present in the initial query, the pipeline revisits LLaVA, requesting it to formulate a response to the user's original question, referencing the identified image.
 5. The process culminates in the presentation of both the located image and LLaVA's generated response within the user interface, offering a comprehensive answer to the user's query.
 
-![CLIP Image Search Results](src/side_by_side_chats)
+![CLIP Image Search Results](src/side_by_side_chats.png)
 
 ### How to Use
 1. Clone the repository to your local machine or a compatible Jupyter environment.
